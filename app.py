@@ -15,6 +15,7 @@ CORS(
             ]
         }
     }
+    supports_credentials=True
 )
 # Load preprocessing pipeline
 pipeline = joblib.load('pipeline.pkl')
