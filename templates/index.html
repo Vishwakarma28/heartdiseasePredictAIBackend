@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction API</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        .endpoint {
+            background: #f7f7f7;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #667eea;
+        }
+        .endpoint h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .method {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.875rem;
+            margin-right: 0.5rem;
+        }
+        .get {
+            background: #10b981;
+            color: white;
+        }
+        .post {
+            background: #3b82f6;
+            color: white;
+        }
+        code {
+            background: #1f2937;
+            color: #10b981;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        pre {
+            background: #1f2937;
+            color: #e5e7eb;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        .status {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #10b981;
+            color: white;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏥 Heart Disease Prediction API</h1>
+        <p class="subtitle">ML-powered API for heart disease risk prediction</p>
+        
+        <p><span class="status">✓ API Running</span></p>
+
+        <h2>Available Endpoints</h2>
+
+        <div class="endpoint">
+            <h3><span class="method get">GET</span> /</h3>
+            <p>Health check endpoint</p>
+            <p><strong>Response:</strong> API status message</p>
+        </div>
+
+        <div class="endpoint">
+            <h3><span class="method post">POST</span> /predict</h3>
+            <p>Predict heart disease risk based on patient data</p>
+            
+            <p><strong>Request Body:</strong></p>
+            <pre>{
+  "Age": 42,
+  "Sex": "M",
+  "ChestPainType": "ASY",
+  "RestingBP": 160.0,
+  "Cholesterol": 193.0,
+  "FastingBS": 0,
+  "RestingECG": "Normal",
+  "MaxHR": 102,
+  "ExerciseAngina": "Y",
+  "Oldpeak": 3.0,
+  "ST_Slope": "Flat"
+}</pre>
+            
+            <p><strong>Response:</strong></p>
+            <pre>{
+  "prediction": 1.0
+}</pre>
+        </div>
+
+        <h2>Usage Example</h2>
+        <p>Using cURL:</p>
+        <pre>curl -X POST https://your-api-url/predict \
+  -H "Content-Type: application/json" \
+  -d '{
+    "Age": 42,
+    "Sex": "M",
+    "ChestPainType": "ASY",
+    "RestingBP": 160.0,
+    "Cholesterol": 193.0,
+    "FastingBS": 0,
+    "RestingECG": "Normal",
+    "MaxHR": 102,
+    "ExerciseAngina": "Y",
+    "Oldpeak": 3.0,
+    "ST_Slope": "Flat"
+  }'</pre>
+
+        <h2>Parameters</h2>
+        <ul>
+            <li><strong>Age:</strong> Age of the patient</li>
+            <li><strong>Sex:</strong> M (Male) or F (Female)</li>
+            <li><strong>ChestPainType:</strong> ASY, NAP, ATA, or TA</li>
+            <li><strong>RestingBP:</strong> Resting blood pressure (mm Hg)</li>
+            <li><strong>Cholesterol:</strong> Serum cholesterol (mg/dl)</li>
+            <li><strong>FastingBS:</strong> Fasting blood sugar (1 if > 120 mg/dl, 0 otherwise)</li>
+            <li><strong>RestingECG:</strong> Normal, ST, or LVH</li>
+            <li><strong>MaxHR:</strong> Maximum heart rate achieved</li>
+            <li><strong>ExerciseAngina:</strong> Y (Yes) or N (No)</li>
+            <li><strong>Oldpeak:</strong> ST depression induced by exercise</li>
+            <li><strong>ST_Slope:</strong> Up, Flat, or Down</li>
+        </ul>
+
+        <p style="text-align: center; color: #666; margin-top: 3rem;">
+            Powered by Machine Learning with Flask 🚀
+        </p>
+    </div>
+
+    <!-- Vercel Speed Insights -->
+    <script>
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+</body>
+</html>
