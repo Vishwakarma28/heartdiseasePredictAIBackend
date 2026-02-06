@@ -6,7 +6,7 @@ import numpy as np
 
 app = Flask(__name__)
 CORS(app, resources={
-    r"/predict": {"origins": "http://localhost:5173"}
+    r"/predict": {"origins": "https://heartdiseasepredictaibackend.vercel.app/predict"}
 })
 # Load preprocessing pipeline
 pipeline = joblib.load('pipeline.pkl')
