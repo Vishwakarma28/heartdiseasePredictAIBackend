@@ -11,7 +11,7 @@ CORS(
         r"/predict": {
             "origins": [
                 "http://localhost:5173",
-                "https://heartdiseasepredictai-bio9vads8-amit-vishs-projects.vercel.app"
+                "https://heartdiseasepreductai.vercel.app"
             ]
         }
     }
