@@ -7,14 +7,9 @@ import numpy as np
 app = Flask(__name__)
 CORS(
     app,
-    resources={
-        r"/predict": {
-            "origins": [
-                "http://localhost:5173",
-                "https://heartdiseasepreductai.vercel.app"
-            ]
-        }
-    }
+    resources={r"/*": {"origins": [
+        "https://heartdiseasepreductai.vercel.app"
+    ]}},
     supports_credentials=True
 )
 # Load preprocessing pipeline
