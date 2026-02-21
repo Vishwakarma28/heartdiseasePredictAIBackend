@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import joblib
 import pandas as pd
 from flask_cors import CORS
@@ -21,7 +21,7 @@ model = joblib.load('model.pkl')
 
 @app.route("/")
 def home():
-    return "ML API with Pipeline + Model is running 🚀"
+    return render_template('index.html')
 
 
 @app.route("/predict", methods=["POST"])
